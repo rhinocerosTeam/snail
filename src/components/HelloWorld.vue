@@ -21,12 +21,20 @@
 </template>
 
 <script>
+
+  import {mapAction} from "vuex";
+
 export default {
   name: 'HelloWorld',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  methods:{
+    ...mapAction({
+      "login":login
+    })
   }
 }
 </script>
