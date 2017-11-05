@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+    <h2>Essential34141 Links</h2>
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
       <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
@@ -22,7 +22,7 @@
 
 <script>
 
-  import {mapAction} from "vuex";
+ // import {mapAction} from "vuex";
 
 export default {
   name: 'HelloWorld',
@@ -32,9 +32,9 @@ export default {
     }
   },
   methods:{
-    ...mapAction({
-      "login":login
-    })
+//    ...mapAction({
+//      "login":login
+//    })
   }
 }
 </script>
