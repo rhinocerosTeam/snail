@@ -6,7 +6,7 @@
       <div class="title">{{year}} - {{mouth}} - {{day}}</div>
       <div class="next"></div>
     </div>
-    <ul class="week">
+    <ul class="days">
       <li>
         <div>日</div>
         <div>一</div>
@@ -16,16 +16,20 @@
         <div>五</div>
         <div>六</div>
       </li>
-    </ul>
-    <ul class="days">
-
-
-
       <li v-for="sort in daysList">
-
         <div v-for="obj in sort" :style="{background:obj.type != 'this'?'rgba(128, 128, 128, 0.2)':'white'}"> {{obj && obj.day}}</div>
       </li>
     </ul>
+
+    <ul class="nealyDays">
+      <li>
+        <div v-for="obj in nearlyDayList.weekList" :style="{background:obj.type != 'this'?'rgba(128, 128, 128, 0.2)':'white'}"> {{obj && obj.week}}</div>
+      </li>
+      <li>
+        <div v-for="obj in nearlyDayList.dayList" :style="{background:obj.type != 'this'?'rgba(128, 128, 128, 0.2)':'white'}"> {{obj && obj.day}}</div>
+      </li>
+    </ul>
+
 
   </div>
 </template>
@@ -33,6 +37,7 @@
 <script>
 
   import Moment from "moment";
+  const WEEK = ["日","一","二","三","四","五","六"]
 
   export default {
     name:"calendar",
@@ -47,11 +52,15 @@
           minute:0, //分钟
           second:0, //秒数
           daysList:[], //日历
+          nearlyDayList:{
+            weekList:[],
+            dayList:[]
+          },
           allDayNum:0, //每个月的总天数
         }
     },
 
-    mounted(){
+    created(){
 
       this.year = this.date.getFullYear();
       this.mouth = this.date.getMonth();
@@ -65,6 +74,7 @@
 
       this.setDateList();
 
+      this.getNearlyDays();
 
 
     },
@@ -106,7 +116,35 @@
         }
         this.daysList = _.chunk(this.daysList,7)
 
+      },
+
+      getNearlyDays(){
+
+
+        for(let i=-3;i<=3;i++){
+          let _day = 0,_m,_week;
+
+          if(i<0){
+            _m =  Moment().subtract((-i),'day');
+          }else{
+            _m = Moment().add((i),'day');
+          }
+
+          _day =_m.date();
+          _week = _m.days();
+
+          this.nearlyDayList.dayList.push({day:_day,type:'this'});
+          this.nearlyDayList.weekList.push({week:WEEK[_week],type:'this'});
+
+        }
+
+
+
+
+
       }
+
+
 
 
     }
