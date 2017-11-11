@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import 'css/index.less'
+  import './css/index.less'
   export default {
     name: 'app'
   }
