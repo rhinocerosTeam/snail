@@ -14,7 +14,7 @@
         v-swipeup="{fn:bigtouch,name:'上滑'}"
         v-swipedown="{fn:bigtouch,name:'下滑'}"
 
-        v-if="isShowBig"
+        v-show="isShowBig"
 
     >
       <li>
@@ -38,7 +38,7 @@
         v-swiperight="{fn:smalltouch,name:'右滑'}"
         v-swipeup="{fn:smalltouch,name:'上滑'}"
         v-swipedown="{fn:smalltouch,name:'下滑'}"
-        v-if="!isShowBig">
+        v-show="!isShowBig">
       <li>
         <div v-for="obj in nearlyDayList.weekList"
              :style="{background:getBackground(obj.type)}">

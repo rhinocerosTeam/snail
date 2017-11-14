@@ -14,6 +14,8 @@ function vueTouch(el,binding,type){
   this.longTouch=true;
   this.vueCallBack=typeof(binding.value)=="object"?binding.value.fn:binding.value;
   this.obj.addEventListener("touchstart",function(e){
+
+
     _this.start(e);
   },false);
   this.obj.addEventListener("touchend",function(e){
@@ -95,6 +97,11 @@ Vue.directive("swipedown",{
 });
 Vue.directive("swipeup",{
   bind:function(el,binding){
+
+
+    console.log("touchstart-->",el)
+
+
     new vueTouch(el,binding,"swipeup");
   }
 });
