@@ -11,10 +11,12 @@
   import {param1,param2} from '@/constant/export'
   import p1 , * as coo  from '@/constant/export'
 
-
-  console.log(param1,param2)
-  console.log(p1)
-  console.log(coo)
+//  param1 = '333';
+//
+//
+//  console.log(param1,param2)
+//  console.log(p1)
+//  console.log(coo)
 
 
   export default {
