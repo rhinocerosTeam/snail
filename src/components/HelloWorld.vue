@@ -1,7 +1,7 @@
 <template>
   <div class="hello" @click="getUserInfo()">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+    <h2>Essential34141 Links</h2>
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
       <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
@@ -22,7 +22,7 @@
 
 <script>
 
-  import {mapActions} from 'vuex';
+import {mapActions} from 'vuex';
 
 export default {
   name: 'HelloWorld',
@@ -31,7 +31,6 @@ export default {
       msg: 'Welcome to Your Vue.js App'
     }
   },
-
   methods: {
     ...mapActions({
       login:'login',
@@ -42,6 +41,12 @@ export default {
       console.log(this.$store.state);
     }
   },
+
+  methods:{
+//    ...mapAction({
+//      "login":login
+//    })
+  }
 
 }
 </script>
