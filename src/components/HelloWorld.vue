@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="hello" @click="getUserInfo()">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
@@ -21,13 +21,28 @@
 </template>
 
 <script>
+
+  import {mapActions} from 'vuex';
+
 export default {
   name: 'HelloWorld',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
-  }
+  },
+
+  methods: {
+    ...mapActions({
+      login:'login',
+      getUserInfo2:'getUserInfo'
+    }),
+    getUserInfo(){
+//      console.log(this.getUserInfo2())
+      console.log(this.$store.state);
+    }
+  },
+
 }
 </script>
 
