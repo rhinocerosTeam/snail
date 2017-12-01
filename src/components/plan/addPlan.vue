@@ -8,15 +8,15 @@
 
 <script>
 
-  import {param1,param2} from '@/constant/export'
-  import p1 , * as coo  from '@/constant/export'
 
-//  param1 = '333';
-//
-//
-//  console.log(param1,param2)
-//  console.log(p1)
-//  console.log(coo)
+  import {param2} from '@/constant/export'
+  import p1 , * as ALLParam  from '@/constant/export'
+
+ // param1 = '333';
+
+  console.log("param2---->",param2)
+  console.log("p1",p1)
+  console.log("ALLParam--->",ALLParam)
 
 
   export default {
